@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Bảng thống kê hiệu suất video, kênh và bình luận YouTube mảng du lịch." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1016'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<title>Thống kê dữ liệu Youtube Du Lịch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="top-glow-bar" aria-hidden="true"></div>
+
+<header class="board-header">
+  <div class="header-sky" aria-hidden="true">
+    <span class="cloud cloud-a">☁️</span>
+    <span class="cloud cloud-b">☁️</span>
+    <span class="cloud cloud-c">☁️</span>
+    <span class="plane-fly">
+      <span class="plane-trail" aria-hidden="true"></span>
+      <svg class="plane-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 12L2 4L8.8 12L2 20Z" fill="currentColor"/>
+      </svg>
+    </span>
+  </div>
+  <div class="board-header__title">
+    <span class="board-header__eyebrow">GATE · TRAVEL CONTENT</span>
+    <h1>Thống kê dữ liệu Youtube Du Lịch</h1>
+  </div>
+  <div class="board-header__meta">
+    <div class="meta-chip">
+      <span class="meta-chip__label">View 1 ngày</span>
+      <span class="meta-chip__value" id="metaViews1d">–</span>
+    </div>
+    <div class="meta-chip">
+      <span class="meta-chip__label">View 7 ngày</span>
+      <span class="meta-chip__value" id="metaViews7d">–</span>
+    </div>
+    <div class="meta-chip">
+      <span class="meta-chip__label">Tổng VPH</span>
+      <span class="meta-chip__value" id="metaTotalVph">–</span>
+    </div>
+    <div class="meta-chip">
+      <span class="meta-chip__label">Kênh</span>
+      <span class="meta-chip__value" id="metaChannels">–</span>
+    </div>
+    <div class="meta-chip">
+      <span class="meta-chip__label">Video</span>
+      <span class="meta-chip__value" id="metaVideos">–</span>
+    </div>
+    <div class="meta-chip">
+      <span class="meta-chip__label">Cập nhật</span>
+      <span class="meta-chip__value" id="metaUpdated">–</span>
+    </div>
+  </div>
+</header>
+
+<div class="market-tabs" id="marketTabs" role="tablist">
+  <!-- Các nút tab được tạo tự động từ public/data/tabs.json - không cần sửa file này khi thêm/xoá tab. -->
+</div>
+
+<main class="board">
+  <div class="controls">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Tìm theo tiêu đề video hoặc tên kênh..." />
+    </div>
+
+    <div class="sort-box">
+      <label for="sortField">Sắp xếp</label>
+      <select id="sortField">
+        <option value="publishedAt">Ngày đăng</option>
+        <option value="viewCount">Lượt xem</option>
+        <option value="viewsPerHour">View/giờ</option>
+        <option value="likeCount">Lượt thích</option>
+        <option value="commentCount">Bình luận</option>
+        <option value="subscriberCount">Sub kênh</option>
+        <option value="duration">Thời lượng</option>
+      </select>
+      <button id="sortDir" class="dir-btn" data-dir="desc" title="Đổi chiều sắp xếp">
+        <span class="dir-btn__arrow">↓</span> Giảm dần
+      </button>
+    </div>
+
+    <div class="sort-box">
+      <label for="dateRangeFilter">Khoảng thời gian</label>
+      <select id="dateRangeFilter">
+        <option value="0">Tất cả</option>
+        <option value="1">1 tháng gần đây</option>
+        <option value="3">3 tháng gần đây</option>
+        <option value="6">6 tháng gần đây</option>
+        <option value="12">12 tháng gần đây</option>
+      </select>
+    </div>
+
+    <div class="channel-filter" id="channelFilterWrap">
+      <button type="button" class="channel-filter__btn" id="channelFilterBtn">
+        <span id="channelFilterLabel">Tất cả kênh</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="channel-filter__panel" id="channelFilterPanel">
+        <div class="channel-filter__actions">
+          <button type="button" id="selectAllChannels">Chọn tất cả</button>
+          <button type="button" id="clearAllChannels">Bỏ chọn tất cả</button>
+        </div>
+        <div class="channel-filter__list" id="channelFilterList"></div>
+      </div>
+    </div>
+
+    <div class="fetch-trigger" id="fetchTriggerWrap">
+      <button type="button" class="fetch-trigger__btn" id="fetchTriggerBtn" title="Chạy lấy dữ liệu mới">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12a9 9 0 1 1-3-6.7" />
+          <polyline points="21 3 21 9 15 9" />
+        </svg>
+        Fetch dữ liệu
+      </button>
+      <div class="fetch-trigger__panel" id="fetchTriggerPanel">
+        <p class="fetch-trigger__hint">Lấy dữ liệu YouTube mới nhất cho TẤT CẢ các tab ngay bây giờ (thường mất vài phút).</p>
+        <label class="fetch-trigger__checkbox">
+          <input type="checkbox" id="fetchForceRefresh" />
+          Ép làm mới toàn bộ bình luận (tốn quota hơn)
+        </label>
+        <label class="fetch-trigger__checkbox">
+          <input type="checkbox" id="fetchFullHistory" />
+          Lấy toàn bộ video của MỌI kênh, không giới hạn ~50 video gần nhất (tốn quota hơn nhiều - kênh mới thêm đã tự động được lấy toàn bộ rồi, không cần tích ô này trừ khi muốn làm lại cho TẤT CẢ kênh)
+        </label>
+        <button type="button" class="fetch-trigger__submit" id="fetchTriggerSubmit">Chạy fetch</button>
+        <div class="fetch-trigger__status" id="fetchTriggerStatus"></div>
+      </div>
+    </div>
+
+    <div class="fetch-trigger" id="manageChannelsWrap">
+      <button type="button" class="fetch-trigger__btn" id="manageChannelsBtn" title="Thêm/xoá kênh, thêm/xoá tab">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        Quản lý kênh
+      </button>
+      <div class="fetch-trigger__panel manage-channels__panel" id="manageChannelsPanel">
+        <p class="fetch-trigger__hint">Thêm kênh vào 1 tab có sẵn, hoặc tạo tab mới. Kênh mới thêm sẽ tự động được lấy dữ liệu trong vài phút, không cần bấm gì thêm.</p>
+
+        <label class="fetch-trigger__label" for="mcTabSelect">Thêm kênh vào tab</label>
+        <select id="mcTabSelect" class="fetch-trigger__input"></select>
+        <input type="text" id="mcChannelInput" class="fetch-trigger__input" placeholder="Dán link hoặc @handle kênh YouTube" autocomplete="off" />
+        <button type="button" class="fetch-trigger__submit" id="mcAddChannelBtn">Thêm kênh</button>
+
+        <div class="manage-channels__divider"></div>
+
+        <label class="fetch-trigger__label" for="mcNewTabName">Hoặc tạo tab mới</label>
+        <input type="text" id="mcNewTabName" class="fetch-trigger__input" placeholder="Tên tab mới (vd: DuLich2)" autocomplete="off" />
+        <input type="text" id="mcNewTabChannel" class="fetch-trigger__input" placeholder="Link/handle kênh đầu tiên của tab này" autocomplete="off" />
+        <button type="button" class="fetch-trigger__submit" id="mcAddTabBtn">Tạo tab mới</button>
+
+        <div class="manage-channels__divider"></div>
+
+        <label class="fetch-trigger__label">Kênh hiện có trong tab đã chọn</label>
+        <div class="manage-channels__list" id="mcChannelList"></div>
+
+        <div class="fetch-trigger__status" id="manageChannelsStatus"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="board-table" id="videoTable">
+      <colgroup>
+        <col class="cg-video" />
+        <col class="cg-channel" />
+        <col class="cg-num" />
+        <col class="cg-num" />
+        <col class="cg-num" />
+        <col class="cg-num" />
+        <col class="cg-num" />
+        <col class="cg-num" />
+        <col class="cg-num" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="col-video">Video</th>
+          <th class="col-channel">Kênh</th>
+          <th class="col-num" data-field="publishedAt">Ngày đăng</th>
+          <th class="col-num" data-field="duration">Thời lượng</th>
+          <th class="col-num" data-field="viewCount">Lượt xem</th>
+          <th class="col-num" data-field="viewsPerHour" title="Tốc độ tăng view gần đây (view/giờ). Nếu chưa có dữ liệu lần fetch trước, hiển thị trung bình cả đời video.">View/giờ</th>
+          <th class="col-num" data-field="likeCount">Thích</th>
+          <th class="col-num" data-field="commentCount">Bình luận</th>
+          <th class="col-num" data-field="subscriberCount">Sub kênh</th>
+        </tr>
+      </thead>
+      <tbody id="videoTableBody">
+        <tr><td colspan="9" class="empty-state"><span class="loading-plane">✈️</span> Đang tải dữ liệu...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal__close" id="modalClose" aria-label="Đóng">✕</button>
+    <div class="modal__header">
+      <img id="modalThumb" src="" alt="" class="modal__thumb" />
+      <div>
+        <h2 id="modalTitle">–</h2>
+        <div class="modal__sub" id="modalChannel">–</div>
+        <div class="modal__stats" id="modalStats">–</div>
+      </div>
+    </div>
+
+    <div class="modal__comments-bar">
+      <h3>Bình luận</h3>
+      <div class="comments-controls">
+        <select id="commentSortField">
+          <option value="likeCount">Lượt thích</option>
+          <option value="publishedAt">Mới nhất</option>
+        </select>
+        <button id="commentSortDir" class="dir-btn dir-btn--small" data-dir="desc">
+          <span class="dir-btn__arrow">↓</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="comments-list" id="commentsList">
+      <div class="empty-state"><span class="loading-plane">✈️</span> Đang tải bình luận...</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="channelModalOverlay">
+  <div class="modal modal--channel">
+    <button class="modal__close" id="channelModalClose" aria-label="Đóng">✕</button>
+    <div class="channel-modal__header">
+      <img id="channelModalAvatar" src="" alt="" class="channel-modal__avatar" />
+      <div>
+        <a id="channelModalName" class="channel-modal__name" href="#" target="_blank" rel="noopener">–</a>
+        <div class="channel-modal__sub" id="channelModalSub">–</div>
+      </div>
+    </div>
+
+    <div class="channel-modal__grid" id="channelModalGrid"></div>
+
+    <div class="channel-modal__revenue">
+      <div class="channel-modal__revenue-head">
+        <h3>💰 Doanh thu ước tính</h3>
+        <div class="channel-modal__rpm">
+          <label for="channelRpmMin">RPM giả định</label>
+          <span>$</span>
+          <input type="number" id="channelRpmMin" min="0" step="0.1" value="3" />
+          <span>–</span>
+          <span>$</span>
+          <input type="number" id="channelRpmMax" min="0" step="0.1" value="6" />
+          <span>/ 1.000 view</span>
+        </div>
+      </div>
+      <div class="channel-modal__revenue-grid" id="channelModalRevenue"></div>
+    </div>
+  </div>
+</div>
+
+<button id="aiChatBtn" class="ai-chat-fab" title="Hỏi trợ lý AI">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2Z" fill="currentColor"/>
+    <path d="M19 14L19.7 16.3L22 17L19.7 17.7L19 20L18.3 17.7L16 17L18.3 16.3Z" fill="currentColor"/>
+  </svg>
+  <span>Hỏi AI</span>
+</button>
+
+<div class="ai-chat-panel" id="aiChatPanel">
+  <div class="ai-chat-panel__box">
+    <div class="ai-chat-panel__header">
+      <div>
+        <div class="ai-chat-panel__title">Trợ lý phân tích · Gemini</div>
+        <div class="ai-chat-panel__sub">Hỏi bất cứ điều gì - có sẵn dữ liệu kênh/video/bình luận</div>
+      </div>
+      <div class="ai-chat-panel__header-actions">
+        <button class="ai-chat-panel__reset-key" id="aiChatHistoryBtn" title="Lịch sử chat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </button>
+        <button class="ai-chat-panel__reset-key" id="aiChatNewBtn" title="Đoạn chat mới">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <button class="ai-chat-panel__reset-key" id="aiChatExpandBtn" title="Phóng to">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+      </button>
+      <button class="ai-chat-panel__reset-key" id="aiChatResetKey" title="Đổi API key">⚙</button>
+        <button class="modal__close" id="aiChatClose" aria-label="Đóng">✕</button>
+      </div>
+    </div>
+    <div class="ai-chat-history" id="aiChatHistoryPanel">
+      <div class="ai-chat-history__empty" id="aiChatHistoryEmpty">Chưa có đoạn chat nào được lưu.</div>
+      <div class="ai-chat-history__list" id="aiChatHistoryList"></div>
+    </div>
+    <div class="ai-chat-panel__messages" id="aiChatMessages"></div>
+    <div class="ai-chat-panel__mode-row">
+      <label class="ai-toggle">
+        <input type="checkbox" id="aiDataModeToggle" />
+        <span class="ai-toggle__slider"></span>
+      </label>
+      <span class="ai-chat-panel__mode-label">
+        Phân tích dữ liệu đang xem (<span id="aiDataModeCount">0</span> video)
+      </span>
+    </div>
+    <div class="ai-chat-panel__input-row">
+      <input type="text" id="aiChatInput" placeholder="Việt Nam - khán giả đang bình luận gì?" autocomplete="off" />
+      <button id="aiChatSend" class="dir-btn dir-btn--small" title="Gửi">➤</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
