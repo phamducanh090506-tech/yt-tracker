@@ -1,8 +1,11 @@
 {
-  "list": "MyTab",
-  "lastUpdated": null,
+  "list": "TBN",
+  "lastUpdated": "2026-08-03T02:41:37.394Z",
   "channelCount": 0,
   "videoCount": 0,
   "quotaUnitsUsed": 0,
-  "errors": []
+  "apiKeysConfigured": 1,
+  "allKeysExhausted": false,
+  "errors": [],
+  "replyErrors": []
 }
