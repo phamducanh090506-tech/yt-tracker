@@ -142,19 +142,26 @@
         Quản lý kênh
       </button>
       <div class="fetch-trigger__panel manage-channels__panel" id="manageChannelsPanel">
-        <p class="fetch-trigger__hint">Thêm kênh vào 1 tab có sẵn, hoặc tạo tab mới. Kênh mới thêm sẽ tự động được lấy dữ liệu trong vài phút, không cần bấm gì thêm.</p>
+        <p class="fetch-trigger__hint">Thêm 1 hoặc nhiều kênh vào 1 tab có sẵn, tạo tab mới, hoặc đổi tên/xoá tab đang chọn ở dưới. Kênh mới thêm sẽ tự động được lấy dữ liệu trong vài phút, không cần bấm gì thêm.</p>
 
         <label class="fetch-trigger__label" for="mcTabSelect">Thêm kênh vào tab</label>
         <select id="mcTabSelect" class="fetch-trigger__input"></select>
-        <input type="text" id="mcChannelInput" class="fetch-trigger__input" placeholder="Dán link hoặc @handle kênh YouTube" autocomplete="off" />
+        <textarea id="mcChannelInput" class="fetch-trigger__input fetch-trigger__textarea" rows="3" placeholder="Dán 1 hoặc nhiều link/@handle kênh YouTube, mỗi kênh 1 dòng (hoặc cách nhau bằng dấu phẩy)" autocomplete="off"></textarea>
         <button type="button" class="fetch-trigger__submit" id="mcAddChannelBtn">Thêm kênh</button>
 
         <div class="manage-channels__divider"></div>
 
         <label class="fetch-trigger__label" for="mcNewTabName">Hoặc tạo tab mới</label>
         <input type="text" id="mcNewTabName" class="fetch-trigger__input" placeholder="Tên tab mới (vd: DuLich2)" autocomplete="off" />
-        <input type="text" id="mcNewTabChannel" class="fetch-trigger__input" placeholder="Link/handle kênh đầu tiên của tab này" autocomplete="off" />
+        <textarea id="mcNewTabChannel" class="fetch-trigger__input fetch-trigger__textarea" rows="3" placeholder="1 hoặc nhiều link/@handle kênh đầu tiên của tab này, mỗi kênh 1 dòng" autocomplete="off"></textarea>
         <button type="button" class="fetch-trigger__submit" id="mcAddTabBtn">Tạo tab mới</button>
+
+        <div class="manage-channels__divider"></div>
+
+        <label class="fetch-trigger__label">Quản lý tab đang chọn</label>
+        <input type="text" id="mcRenameTabInput" class="fetch-trigger__input" placeholder="Tên mới cho tab đang chọn" autocomplete="off" />
+        <button type="button" class="fetch-trigger__submit" id="mcRenameTabBtn">Đổi tên tab</button>
+        <button type="button" class="fetch-trigger__submit fetch-trigger__submit--danger" id="mcDeleteTabBtn">Xoá tab này</button>
 
         <div class="manage-channels__divider"></div>
 
