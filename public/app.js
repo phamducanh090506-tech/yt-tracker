@@ -49,6 +49,9 @@ const els = {
   mcNewTabChannel: document.getElementById("mcNewTabChannel"),
   mcAddTabBtn: document.getElementById("mcAddTabBtn"),
   mcChannelList: document.getElementById("mcChannelList"),
+  mcRenameTabInput: document.getElementById("mcRenameTabInput"),
+  mcRenameTabBtn: document.getElementById("mcRenameTabBtn"),
+  mcDeleteTabBtn: document.getElementById("mcDeleteTabBtn"),
   modalOverlay: document.getElementById("modalOverlay"),
   modalClose: document.getElementById("modalClose"),
   channelModalOverlay: document.getElementById("channelModalOverlay"),
@@ -460,6 +463,43 @@ els.mcAddTabBtn.addEventListener("click", async () => {
     els.mcTabSelect.value = tab;
     renderManageChannelList();
   }
+});
+
+els.mcRenameTabBtn.addEventListener("click", async () => {
+  const tab = els.mcTabSelect.value;
+  const newTabName = els.mcRenameTabInput.value.trim();
+  if (!tab) return setManageStatus("Chưa có tab nào để đổi tên.", "error");
+  if (!newTabName) return setManageStatus("Nhập tên mới cho tab trước đã.", "error");
+  const wasCurrent = tab === currentList;
+  const ok = await callManageChannels({ action: "renameTab", tab, newTab: newTabName }, els.mcRenameTabBtn);
+  if (ok) {
+    els.mcRenameTabInput.value = "";
+    els.mcTabSelect.value = newTabName;
+    renderManageChannelList();
+    if (wasCurrent) {
+      currentList = newTabName;
+      els.marketTabs.querySelectorAll(".market-tab").forEach((btn) => {
+        const isActive = btn.dataset.list === currentList;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-selected", String(isActive));
+      });
+      loadData();
+    }
+  }
+});
+
+els.mcDeleteTabBtn.addEventListener("click", async () => {
+  const tab = els.mcTabSelect.value;
+  if (!tab) return setManageStatus("Chưa có tab nào để xoá.", "error");
+  if (Object.keys(mcTabsCache).length <= 1) {
+    return setManageStatus("Không thể xoá tab cuối cùng - cần ít nhất 1 tab.", "error");
+  }
+  if (!confirm(`Xoá toàn bộ tab "${tab}" và danh sách kênh trong đó? Không thể hoàn tác.`)) return;
+  const wasCurrent = tab === currentList;
+  const ok = await callManageChannels({ action: "removeTab", tab }, els.mcDeleteTabBtn);
+  // Nếu vừa xoá đúng tab đang xem, loadTabs() bên trong callManageChannels đã
+  // tự chuyển currentList sang tab đầu tiên còn lại - chỉ cần tải lại dữ liệu.
+  if (ok && wasCurrent) loadData();
 });
 
 async function removeChannel(tab, channel) {
