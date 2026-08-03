@@ -37,7 +37,7 @@ html { scroll-behavior: smooth; }
 
 html, body {
   margin: 0;
-  min-height: 100%;
+  min-height: 100vh;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
@@ -661,6 +661,20 @@ select.fetch-trigger__input {
 
 .manage-channels__panel .fetch-trigger__input + .fetch-trigger__input { margin-top: 8px; }
 .manage-channels__panel .fetch-trigger__label { margin-top: 4px; }
+
+.fetch-trigger__textarea {
+  resize: vertical;
+  min-height: 60px;
+  line-height: 1.5;
+}
+
+.fetch-trigger__submit--danger {
+  margin-top: 8px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+}
+.fetch-trigger__submit--danger:hover { border-color: var(--amber); color: var(--amber); background: var(--amber-soft); opacity: 1; }
 
 .manage-channels__divider {
   height: 1px;
