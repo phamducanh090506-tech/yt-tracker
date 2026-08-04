@@ -1,16 +1,11 @@
 {
   "list": "TBN",
-  "lastUpdated": "2026-08-03T11:19:34.867Z",
-  "channelCount": 5,
-  "videoCount": 228,
-  "quotaUnitsUsed": 330,
+  "lastUpdated": "2026-08-04T06:43:59.040Z",
+  "channelCount": 3,
+  "videoCount": 229,
+  "quotaUnitsUsed": 118,
   "apiKeysConfigured": 1,
   "allKeysExhausted": false,
-  "errors": [
-    {
-      "channel": "https://www.youtube.com/watch?v=sqOif7S-ZdQ",
-      "error": "Channel not found for \"https://www.youtube.com/watch?v=sqOif7S-ZdQ\""
-    }
-  ],
+  "errors": [],
   "replyErrors": []
 }
