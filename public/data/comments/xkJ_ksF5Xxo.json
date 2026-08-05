@@ -3,14 +3,53 @@
   "disabled": false,
   "comments": [
     {
+      "id": "UgxmTBk5ia-lfb-0kTJ4AaABAg",
+      "author": "@romanopinto5172",
+      "authorImage": "https://yt3.ggpht.com/ftl8NhG2-VqX2V5IhtA4ZJkpiqG_8d-OYYJ4O9KrZw6hekOZHZhgEej1gf0unBulecCimV-8=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Good people in Mauritius.",
+      "likeCount": 0,
+      "publishedAt": "2026-08-05T07:08:29Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "Ugx8gdAZhtUTE9prgv54AaABAg",
+      "author": "@AbdulSattar-pi6un",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_li0yM6cYLIOWjD11MRFrJBTyO1UpGuxl0HXyI_Shaix_AohWC1X6iVYA2plRVEmtsyaw=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Welcome Mauritius 🇲🇺",
+      "likeCount": 0,
+      "publishedAt": "2026-08-05T06:09:28Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgzMaVsDFEzLPGUYffN4AaABAg",
+      "author": "@ShofarDussiel",
+      "authorImage": "https://yt3.ggpht.com/AXdljMNMnXwaBD3M-mhqdKAJuIQMqYisuJWvx9JU05Yg2ZFS5V2k844d4hGK8oNCPLEGGeTv=s48-c-k-c0x00ffffff-no-rj",
+      "text": "it seems AI is incapable to pronounce french names correctly.  surprising.",
+      "likeCount": 0,
+      "publishedAt": "2026-08-04T20:49:34Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
       "id": "UgxMpHkPJDfO2b8ijbF4AaABAg",
       "author": "@caroltiwari8113",
       "authorImage": "https://yt3.ggpht.com/ytc/AIdro_nVH4izlqgdwwgREqGzVK6S3mNDdFCtIHQP2465Gh0=s48-c-k-c0x00ffffff-no-rj",
       "text": "Hello from Boston, US",
       "likeCount": 0,
       "publishedAt": "2026-08-04T03:02:18Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgxMpHkPJDfO2b8ijbF4AaABAg.A_43CsqqBXvA_4ldsGKvut",
+          "author": "@BestTravelDocumentary4k",
+          "authorImage": "https://yt3.ggpht.com/-UpJl9sxCJX0oihHTPUD2HAANNTOmkdkMIgbWjbPd5VD3n1sam86_3MXfyZZgeL7czhWgLve=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Greetings to Boston! 😊 Thanks for stopping by and enjoying the documentary. Hope you have a fantastic day!",
+          "likeCount": 0,
+          "publishedAt": "2026-08-04T09:39:20Z"
+        }
+      ]
     },
     {
       "id": "Ugzh5kzW8coWfCkVL_x4AaABAg",
@@ -19,8 +58,17 @@
       "text": "Watching from Mauritius",
       "likeCount": 0,
       "publishedAt": "2026-08-03T21:41:44Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "Ugzh5kzW8coWfCkVL_x4AaABAg.A_3UWs4PJGMA_4lqXjbbsY",
+          "author": "@BestTravelDocumentary4k",
+          "authorImage": "https://yt3.ggpht.com/-UpJl9sxCJX0oihHTPUD2HAANNTOmkdkMIgbWjbPd5VD3n1sam86_3MXfyZZgeL7czhWgLve=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Thanks for tuning in from Mauritius! More exciting travel documentaries are on the way. Stay tuned! 🌍🎥",
+          "likeCount": 0,
+          "publishedAt": "2026-08-04T09:41:04Z"
+        }
+      ]
     },
     {
       "id": "UgwpibwW540puH4mr654AaABAg",
@@ -39,8 +87,17 @@
       "text": "Watching from USA🇺🇸👍",
       "likeCount": 0,
       "publishedAt": "2026-08-03T02:18:28Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgzCHjDwKfmmQsfY84N4AaABAg.A_1POxSf2pNA_4mlcOdaqX",
+          "author": "@BestTravelDocumentary4k",
+          "authorImage": "https://yt3.ggpht.com/-UpJl9sxCJX0oihHTPUD2HAANNTOmkdkMIgbWjbPd5VD3n1sam86_3MXfyZZgeL7czhWgLve=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Greetings to the USA! 🇺🇸😊 Thanks for joining us. Hope you enjoyed the documentary!",
+          "likeCount": 0,
+          "publishedAt": "2026-08-04T09:49:08Z"
+        }
+      ]
     },
     {
       "id": "Ugwpum5xMErFKINGrLF4AaABAg",
@@ -924,7 +981,7 @@
       "author": "@juniorlakhansingh3682",
       "authorImage": "https://yt3.ggpht.com/ytc/AIdro_ngmZcGVTZmqV4XWcOx2Q0HZ_8K48B7PURf6Lj7or8iuX1O=s48-c-k-c0x00ffffff-no-rj",
       "text": "watching from The REPUBLIC OF TRINIDAD AND TOBAGO     amazing people.",
-      "likeCount": 1,
+      "likeCount": 2,
       "publishedAt": "2026-07-22T15:58:04Z",
       "replyCount": 1,
       "replies": [
@@ -1264,36 +1321,6 @@
       "text": "Watching from Mauritius\nLocal time 11.30 morning\nI am aged 75 n 3rd generation\nMy grand patents came from Gujarat India\nI am part of 'Surtee' community n I am Muslim",
       "likeCount": 0,
       "publishedAt": "2026-07-21T07:38:03Z",
-      "replyCount": 0,
-      "replies": []
-    },
-    {
-      "id": "UgyOAcdJ7-2_7G4NeqV4AaABAg",
-      "author": "@JennyNaidoo-j6k",
-      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_m3yH3CkDYbBlrEro0QnKb_ItobeFHLwKuQcGuP0f6Bn7OoKZ8W5OF5gGcuK2Gkd9LxEg=s48-c-k-c0x00ffffff-no-rj",
-      "text": "South Africa 8,30 am",
-      "likeCount": 1,
-      "publishedAt": "2026-07-21T06:38:09Z",
-      "replyCount": 0,
-      "replies": []
-    },
-    {
-      "id": "UgyOqXPHO6rM1V1-w554AaABAg",
-      "author": "@karminiscooking5073",
-      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_kdi9dIU6BOAo0Hx78PLyKQPv3Av3bGH7zKyEl27WDjsg=s48-c-k-c0x00ffffff-no-rj",
-      "text": "Hi, I’m from Singapore 🇸🇬 and time is 02:30pm",
-      "likeCount": 1,
-      "publishedAt": "2026-07-21T06:30:31Z",
-      "replyCount": 0,
-      "replies": []
-    },
-    {
-      "id": "UgyhAHbmDrz-3cJQ5594AaABAg",
-      "author": "@DiscoveringTheWorld6868",
-      "authorImage": "https://yt3.ggpht.com/Yio4mqL6-UveIzvex-ULJgctdxKWiwi3CTI9fav_osouLz1_tiuVlWh8SecB0GC9UF-0IKjXCg=s48-c-k-c0x00ffffff-no-rj",
-      "text": "The cuisine in Mauritius is diverse, but the people mainly consume Indian and Thai-style dishes.",
-      "likeCount": 0,
-      "publishedAt": "2026-07-21T02:13:12Z",
       "replyCount": 0,
       "replies": []
     }
