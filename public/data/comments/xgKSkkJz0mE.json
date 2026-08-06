@@ -1,5 +1,25 @@
 {
   "videoId": "xgKSkkJz0mE",
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgzWke7JbU2fSYiY9KJ4AaABAg",
+      "author": "@user_mm2016",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mGJjJyQVs3csSIWVMnzhfZmrhWW0tLrHm7PrhQhlnxsQ=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Tokyo, JAPAN😊",
+      "likeCount": 1,
+      "publishedAt": "2026-08-05T10:42:24Z",
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgzWke7JbU2fSYiY9KJ4AaABAg.A_7SebaK5LGA_7YKzvf37B",
+          "author": "@UnseenEarth4K1402",
+          "authorImage": "https://yt3.ggpht.com/1HLO8sQu1JwQn9NvET9uVJ_j_gNL5FDzQ2ViFOJbi-UIcOjLf_curBRjYt4lyJiMQ2Og5IMFVA=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Thank you for watching.❤️❤️❤️",
+          "likeCount": 0,
+          "publishedAt": "2026-08-05T11:32:01Z"
+        }
+      ]
+    }
+  ]
 }
