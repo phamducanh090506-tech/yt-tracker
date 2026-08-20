@@ -3,14 +3,33 @@
   "disabled": false,
   "comments": [
     {
+      "id": "UgxEvC95hsxlmwtsmUF4AaABAg",
+      "author": "@JacobThandizwe",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mZTaHB_dUrjdxVPzWHPSBBiQ8yLcuryhd4EkW86K1c1ICS_z_qpEkyUfbcf4p_XGWlCw=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Jacob Duma, South Africa, the 20th of August 2026, 21:10.",
+      "likeCount": 0,
+      "publishedAt": "2026-08-20T19:10:45Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
       "id": "UgzsulX7agmn00_p_hZ4AaABAg",
       "author": "@miltonhunter1581",
       "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mc2cYTk5V9AFQR8Sl31V2TfjCYW4pBHjG7fN_BZy7t_g=s48-c-k-c0x00ffffff-no-rj",
       "text": "Watching from the United  State , Time 5:29",
       "likeCount": 0,
       "publishedAt": "2026-08-19T21:30:31Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgzsulX7agmn00_p_hZ4AaABAg.A_hexlEQFrRA_ilnMncwGs",
+          "author": "@BestTravelDocumentary4k",
+          "authorImage": "https://yt3.ggpht.com/-UpJl9sxCJX0oihHTPUD2HAANNTOmkdkMIgbWjbPd5VD3n1sam86_3MXfyZZgeL7czhWgLve=s48-c-k-c0x00ffffff-no-rj",
+          "text": "\"Greetings to the US! 🇺🇸 Thanks for tuning in with us today. Which state or city are you watching from?\"",
+          "likeCount": 0,
+          "publishedAt": "2026-08-20T07:49:30Z"
+        }
+      ]
     },
     {
       "id": "UgxlWoeCWLIm7eTmYbh4AaABAg",
@@ -19,8 +38,17 @@
       "text": "In kenya 19:30hrs",
       "likeCount": 0,
       "publishedAt": "2026-08-19T16:41:28Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgxlWoeCWLIm7eTmYbh4AaABAg.A_h8sk6RnEeA_ilzWIk7kQ",
+          "author": "@BestTravelDocumentary4k",
+          "authorImage": "https://yt3.ggpht.com/-UpJl9sxCJX0oihHTPUD2HAANNTOmkdkMIgbWjbPd5VD3n1sam86_3MXfyZZgeL7czhWgLve=s48-c-k-c0x00ffffff-no-rj",
+          "text": "\"Greetings to Kenya! 🇰🇪 Thank you for spending your evening watching with us. What is your favorite local dish or destination in Kenya?\"",
+          "likeCount": 0,
+          "publishedAt": "2026-08-20T07:51:09Z"
+        }
+      ]
     },
     {
       "id": "Ugw1c4Dqm8QmoALstPB4AaABAg",
